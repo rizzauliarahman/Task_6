@@ -120,40 +120,56 @@ Buatlah class Controller.java sesuai class diagram berikut <br>![24] (/asset/24.
 * get Object source action event<br>![29] (/asset/29.PNG) <br>
 * cek current view
 * jika view merupakan HomeTimeline : 
- * Downcast view<br>![30] (/asset/30.PNG) <br>
- * cek source action event
- * jika event berasal dari btnCompose : 
-   * panggil method goToComposeTweet
-   * dispose view home<br>![31] (/asset/31.PNG) <br>
- * jika event berasal dari btnFollow :
-   * panggil method goToFollowUser
-   * dispose view home<br>![32] (/asset/32.PNG) <br>  
- * jika event berasal dari btnRefresh : 
-   * set text area timeline dengan String yang diambil dari getHomeTimeline dari model<br>![33] (/asset/33.PNG) <br> 
- * jika event berasal dari btnExit :
-   * tampilkan pesan
-   * hentikan program<br>![34] (/asset/34.PNG) <br> 
+  * Downcast view<br>![30] (/asset/30.PNG) <br>
+  * cek source action event
+  * jika event berasal dari btnCompose : 
+    * panggil method goToComposeTweet()
+    * dispose view home
+    * ![31] (/asset/31.PNG) 
+    * 
+  * jika event berasal dari btnFollow :
+    * panggil method goToFollowUser()
+    * dispose view home
+    * ![32] (/asset/32.PNG) 
+    * 
+  * jika event berasal dari btnRefresh : 
+    * set text area timeline dengan String yang diambil dari getHomeTimeline dari model
+    * ![33] (/asset/33.PNG) 
+    * 
+  * jika event berasal dari btnExit :
+    * tampilkan pesan
+    * hentikan program
+    * ![34] (/asset/34.PNG) 
+    * 
 * jika view merupakan ComposeTweet :
- * Downcast view<br>![35] (/asset/35.PNG) <br>
- * cek source action event
- * jika event berasal dari btnCancel : 
-   * panggil method goToHomeTimeline
-   * dispose view compose <br>![36] (/asset/36.PNG) <br> 
- * jika event berasal dari btnTweet :
-   * ambil String status tweet dari text area tweet
-   * post status tweet dengan memanggil method tweetStatus dari objek model
-   * panggil method goToHomeTimeline
-   * dispose view compose<br>![37] (/asset/37.PNG) <br> 
+  * Downcast view<br>![35] (/asset/35.PNG) <br>
+  * cek source action event
+  * jika event berasal dari btnCancel : 
+    * panggil method goToHomeTimeline
+    * dispose view compose 
+    * ![36] (/asset/36.PNG) 
+    * 
+  * jika event berasal dari btnTweet :
+    * ambil String status tweet dari text area tweet
+    * post status tweet dengan memanggil method tweetStatus dari objek model
+    * panggil method goToHomeTimeline
+    * dispose view compose
+    * ![37] (/asset/37.PNG)
+    * 
 * jika view merupakan FollowUser :
- * Downcast view<br>![38] (/asset/38.PNG) <br>
- * cek source action event
- * jika event berasal dari btnCancel : 
-   * panggil method goToHomeTimeline   * 
-   * dispose view follow<br>![39] (/asset/39.PNG) <br> 
- * jika event berasal dari btnFollow : 
-   * ambil String user dari text field user
-   * follow user dengan memanggil method followUser dari objek model 
-   * kosongkan text field user <br>![40] (/asset/40.PNG) <br>
+  * Downcast view<br>![38] (/asset/38.PNG) <br>
+  * cek source action event
+  * jika event berasal dari btnCancel : 
+    * panggil method goToHomeTimeline
+    * dispose view follow
+    * ![39] (/asset/39.PNG)
+    * 
+  * jika event berasal dari btnFollow : 
+    * ambil String user dari text field user
+    * follow user dengan memanggil method followUser dari objek model 
+    * kosongkan text field user 
+    * ![40] (/asset/40.PNG) 
+    * 
 	
 ### 7. Driver.java
 * Buatlah class Driver.java yang memiliki main method (psvm)
