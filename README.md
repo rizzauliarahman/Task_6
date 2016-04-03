@@ -70,56 +70,56 @@ Buatlah aplikasi java twitter yaitu aplikasi yang untuk mengakses social media t
 
 ### 2. interface View.java
 * terdapat method abstrak addListener<br>
-![18] (/asset/18.JPG) <br>
+![18] (/asset/18.PNG) <br>
 
 ### 3. HomeTimeline.java
 Buatlah class JFrame HomeTimeline.java dengan tampilan sebagai berikut <br>
-![09] (/asset/09.JPG) <br>
+![09] (/asset/09.PNG) <br>
 * terdapat komponen : 
  * JTextArea : txAreaTimeline, set Editable = false
  * JButton : btnCompose, btnFollow, btnRefresh, btnExit
 * kelas mengimplementasikan interface View
 * hapus main method (psvm) di dalam GUI
 * tambahkan method getter objek untuk mengembalikan setiap objek button<br>
-![10] (/asset/10.JPG) <br>
+![10] (/asset/10.PNG) <br>
 * tambahkan method setTimeline untuk mengeset String pada text area Timeline<br>
-![11] (/asset/11.JPG) <br>
+![11] (/asset/11.PNG) <br>
 * tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
-![12] (/asset/12.JPG) <br>
+![12] (/asset/12.PNG) <br>
 
 ### 4. ComposeTweet.java
 Buatlah class JFrame ComposeTweet.java dengan tampilan sebagai berikut <br>
-![13] (/asset/13.JPG) <br>
+![13] (/asset/13.PNG) <br>
 * terdapat komponen : 
  * JTextArea : txAreaTweet, set Editable = false
  * JButton : btnCancel, btnTweet
 * kelas mengimplementasikan interface View
 * hapus main method (psvm) di dalam GUI
 * tambahkan method getter objek untuk mengembalikan setiap objek button<br>
-![14] (/asset/14.JPG) <br>
+![14] (/asset/14.PNG) <br>
 * tambahkan method getTweet untuk mengambil String pada text area Tweet<br>
-![15] (/asset/15.JPG) <br>
+![15] (/asset/15.PNG) <br>
 * tambahkan method setTweet untuk mengeset String pada text area Tweet<br>
-![16] (/asset/16.JPG) <br>
+![16] (/asset/16.PNG) <br>
 * tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
-![17] (/asset/17.JPG) <br>
+![17] (/asset/17.PNG) <br>
 
 ### 5. FollowUser.java
 Buatlah class JFrame FollowUser.java dengan tampilan sebagai berikut <br>
-![19] (/asset/19.JPG) <br>
+![19] (/asset/19.PNG) <br>
 * terdapat komponen : 
  * JTextField : txFieldUser
  * JButton : btnCancel, btnFollow
 * kelas mengimplementasikan interface View
 * hapus main method (psvm) di dalam GUI
 * tambahkan method getter objek untuk mengembalikan setiap objek button<br>
-![20] (/asset/20.JPG) <br>
+![20] (/asset/20.PNG) <br>
 * tambahkan method getUser untuk mengambil String pada text area User<br>
-![21] (/asset/21.JPG) <br>
+![21] (/asset/21.PNG) <br>
 * tambahkan method setUser untuk mengeset String pada text area User<br>
-![22] (/asset/22.JPG) <br>
+![22] (/asset/22.PNG) <br>
 * tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
-![23] (/asset/23.JPG) <br>
+![23] (/asset/23.PNG) <br>
 
 
 ### 6. Controller.java
