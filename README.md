@@ -1,10 +1,10 @@
 # Task_6
 Exercise on API using Twitter4J
 
-### Aplikasi Java Twitter
+## Aplikasi Java Twitter
 Buatlah aplikasi java twitter yaitu aplikasi yang untuk mengakses social media twitter melaui apikasi java. Aplikasi java twitter ini memiliki spesifikasi sebagai berikut
 
-#### 0. Twitter OAuth Token
+### 0. Twitter OAuth Token
 * log in ke akun Twitter
 * buka halaman [apps.twitter.com] (apps.twitter.com)
 * buatlag aplikasi baru dengan mengekklik create new App<br>
@@ -28,7 +28,7 @@ Buatlah aplikasi java twitter yaitu aplikasi yang untuk mengakses social media t
 * see more [here] (https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
 
 
-#### 1. TwitterModel.java
+### 1. TwitterModel.java
 * download library for Twitter API dari [Twitter4J] (http://twitter4j.org)
 * temukan lib jar twitter4j-core-4.0.1.jar
 * Buatlah sebuah project NetBeans
@@ -40,10 +40,86 @@ Buatlah aplikasi java twitter yaitu aplikasi yang untuk mengakses social media t
 	![02] (/asset/02.PNG) <br>
 * Terdapat sebuah variable private Twitter dengan nama twitter
 
-##### a. Constructor TwitterModel 
-* Constructor akan menginstansiasi object twitter <br>
+* <b>a. Constructor TwitterModel </b>
+ * Constructor akan menginstansiasi object twitter <br>
 	![03] (/asset/03.PNG) <br>
 
-##### b. Method tweetStatus ( tweet : String ) 
-* Method akan mengirimkan String tweet ke akun twitter<br>
-	![04] (/asset/04.png) <br>
+* <b>b. Method tweetStatus ( tweet : String ) </b>
+ * lakukan syntax berikut di dalam blok <b> try-catch </b>
+ * Method akan mengirimkan String tweet ke akun twitter<br>
+	![04] (/asset/04.PNG) <br>
+ * Tampilkan pesan status berhasil diposting dengan <br>
+	![05] (/asset/05.PNG) <br>
+ * tambahkan pesan di blok <b> catch </b> untuk menampilkan pesan error<br>
+	![06] (/asset/06.PNG) <br>
+
+* <b>c. Method getHomeTimeline() : String  </b>
+ * lakukan syntax berikut di dalam blok <b> try-catch </b>
+ * Method akan mengambil tweet yang ada pada home timeline dan mengembalikan isi String s<br>
+	![07] (/asset/07.PNG) <br>
+ * tambahkan pesan di blok <b> catch </b> untuk menampilkan pesan error<br>
+	![06] (/asset/06.PNG) <br>
+ * jika terjadi error, method akan mengembalikan nilai null
+ 
+* <b>d. Method followUser ( user : String ) </b>
+ * lakukan syntax berikut di dalam blok <b> try-catch </b>
+ * Method akan membuat akun memfollow sebuah akun twitter dengan syntax<br>
+	![08] (/asset/08.PNG) <br>
+ * tambahkan pesan di blok <b> catch </b> untuk menampilkan pesan error<br>
+	![06] (/asset/06.PNG) <br>
+
+### 2. interface View.java
+* terdapat method abstrak addListener<br>
+![18] (/asset/18.JPG) <br>
+
+### 3. HomeTimeline.java
+Buatlah class JFrame HomeTimeline.java dengan tampilan sebagai berikut <br>
+![09] (/asset/09.JPG) <br>
+* terdapat komponen : 
+ * JTextArea : txAreaTimeline, set Editable = false
+ * JButton : btnCompose, btnFollow, btnRefresh, btnExit
+* kelas mengimplementasikan interface View
+* hapus main method (psvm) di dalam GUI
+* tambahkan method getter objek untuk mengembalikan setiap objek button<br>
+![10] (/asset/10.JPG) <br>
+* tambahkan method setTimeline untuk mengeset String pada text area Timeline<br>
+![11] (/asset/11.JPG) <br>
+* tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
+![12] (/asset/12.JPG) <br>
+
+### 4. ComposeTweet.java
+Buatlah class JFrame ComposeTweet.java dengan tampilan sebagai berikut <br>
+![13] (/asset/13.JPG) <br>
+* terdapat komponen : 
+ * JTextArea : txAreaTweet, set Editable = false
+ * JButton : btnCancel, btnTweet
+* kelas mengimplementasikan interface View
+* hapus main method (psvm) di dalam GUI
+* tambahkan method getter objek untuk mengembalikan setiap objek button<br>
+![14] (/asset/14.JPG) <br>
+* tambahkan method getTweet untuk mengambil String pada text area Tweet<br>
+![15] (/asset/15.JPG) <br>
+* tambahkan method setTweet untuk mengeset String pada text area Tweet<br>
+![16] (/asset/16.JPG) <br>
+* tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
+![17] (/asset/17.JPG) <br>
+
+### 5. FollowUser.java
+Buatlah class JFrame FollowUser.java dengan tampilan sebagai berikut <br>
+![19] (/asset/19.JPG) <br>
+* terdapat komponen : 
+ * JTextField : txFieldUser
+ * JButton : btnCancel, btnFollow
+* kelas mengimplementasikan interface View
+* hapus main method (psvm) di dalam GUI
+* tambahkan method getter objek untuk mengembalikan setiap objek button<br>
+![20] (/asset/20.JPG) <br>
+* tambahkan method getUser untuk mengambil String pada text area User<br>
+![21] (/asset/21.JPG) <br>
+* tambahkan method setUser untuk mengeset String pada text area User<br>
+![22] (/asset/22.JPG) <br>
+* tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
+![23] (/asset/23.JPG) <br>
+
+
+### 6. Controller.java
