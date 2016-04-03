@@ -91,7 +91,7 @@ Buatlah class JFrame HomeTimeline.java dengan tampilan sebagai berikut <br>
 Buatlah class JFrame ComposeTweet.java dengan tampilan sebagai berikut <br>
 ![13] (/asset/13.PNG) <br>
 * terdapat komponen : 
- * JTextArea : txAreaTweet, set Editable = false
+ * JTextArea : txAreaTweet
  * JButton : btnCancel, btnTweet
 * kelas mengimplementasikan interface View
 * hapus main method (psvm) di dalam GUI
@@ -99,8 +99,6 @@ Buatlah class JFrame ComposeTweet.java dengan tampilan sebagai berikut <br>
 ![14] (/asset/14.PNG) <br>
 * tambahkan method getTweet untuk mengambil String pada text area Tweet<br>
 ![15] (/asset/15.PNG) <br>
-* tambahkan method setTweet untuk mengeset String pada text area Tweet<br>
-![16] (/asset/16.PNG) <br>
 * tambahkan add listener pada setiap tombol dengan memanggil method addActionListener<br>
 ![17] (/asset/17.PNG) <br>
 
@@ -123,3 +121,93 @@ Buatlah class JFrame FollowUser.java dengan tampilan sebagai berikut <br>
 
 
 ### 6. Controller.java
+Buatlah class Controller.java sesuai class diagram berikut <br>
+![24] (/asset/24.PNG) <br>
+* kelas Controller <b> implements ActionListener </b>
+* implementasikan method actionPerformed(ActionEvent ae)
+
+#### a. Method goToHomeTimeline()
+* method menginstansiasi gui HomeTimeline
+* set visible view = true
+* set lisener view dengan controller this
+* set view = objek gui HomeTimeline<br>
+* method mengeset text area timeline dengan String yang diambil dari getHomeTimeline dari model
+![25] (/asset/25.PNG) <br>
+
+#### b. Method goToComposeTweet()
+* method menginstansiasi gui ComposeTweet
+* set visible view = true
+* set lisener view dengan controller this
+* set view = objek gui ComposeTweet<br>
+![26] (/asset/26.PNG) <br>
+
+#### c. Method goToFollowUser()
+* method menginstansiasi gui FollowUser
+* set visible view = true
+* set lisener view dengan controller this
+* set view = objek gui FollowUser<br>
+![27] (/asset/27.PNG) <br>
+
+#### d. Constructor Controller()
+* Constructor menginstansiasi TwitterModel model
+* Constructor memanggil method goToHomeTimeline<br>
+![28] (/asset/28.PNG) <br>
+
+#### e. Method actionPerformed(ActionEvent ae)
+* get Object source action event<br>
+	![29] (/asset/29.PNG) <br>
+* cek current view
+
+* jika view merupakan HomeTimeline : 
+ * Downcast view<br>
+	![30] (/asset/30.PNG) <br>
+ * cek source action event
+ * jika event berasal dari btnCompose : 
+  * panggil method goToComposeTweet
+	* dispose view home<br>
+	![31] (/asset/31.PNG) <br>
+ * jika event berasal dari btnFollow :
+  * panggil method goToFollowUser
+  * dispose view home<br>
+	![32] (/asset/32.PNG) <br>  
+ * jika event berasal dari btnRefresh : 
+  * set text area timeline dengan String yang diambil dari getHomeTimeline dari model<br>
+	![33] (/asset/33.PNG) <br> 
+ * jika event berasal dari btnExit :
+  * tampilkan pesan
+  * hentikan program<br>
+	![34] (/asset/34.PNG) <br> 
+	
+* jika view merupakan ComposeTweet :
+ * Downcast view<br>
+	![35] (/asset/35.PNG) <br>
+ * cek source action event
+ * jika event berasal dari btnCancel : 
+  * panggil method goToHomeTimeline
+  * dispose view compose<br>
+	![36] (/asset/36.PNG) <br> 
+ * jika event berasal dari btnTweet :
+  * ambil String status tweet dari text area tweet
+  * post status tweet dengan memanggil method tweetStatus dari objek model
+  * panggil method goToHomeTimeline
+  * dispose view compose<br>
+	![37] (/asset/37.PNG) <br> 
+  
+* jika view merupakan FollowUser :
+ * Downcast view<br>
+	![38] (/asset/38.PNG) <br>
+ * cek source action event
+ * jika event berasal dari btnCancel : 
+  * panggil method goToHomeTimeline
+  * dispose view follow<br>
+	![39] (/asset/39.PNG) <br> 
+ * jika event berasal dari btnFollow : 
+  * ambil String user dari text field user
+  * follow user dengan memanggil method followUser dari objek model 
+  * kosongkan text field user <br>
+	![40] (/asset/40.PNG) <br>
+	
+### 7. Driver.java
+* Buatlah class Driver.java yang memiliki main method (psvm)
+* instansiasi objek Controller()
+* cobalah aplikasi Java Twitter yang telah dibuat
